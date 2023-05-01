@@ -15,6 +15,8 @@ app.use(cors())
 
 const API_KEY = process.env.API_KEY
 
+const hostName = '0.0.0.0'
+
 app.post('/answers', async (req, res) => {
     const options = {
         method: 'POST',
@@ -39,9 +41,10 @@ app.post('/answers', async (req, res) => {
 
         const data = await response.json()
         res.send(data)
+        res.send('success')
     } catch (error) {
         console.error(error);
     }
 })
 
-app.listen(PORT, () => console.log('THE SERVER IS RUNNNING ON PORT ' + PORT))
+app.listen(PORT, hostName, () => console.log(`THE SERVER IS RUNNNING at https://${hostName}` + PORT))
