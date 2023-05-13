@@ -40,7 +40,7 @@ function App() {
       const response = await fetch('http://localhost:8000/answers', options)
       const data = await response.json()
 
-      // console.log(data)
+      console.log(data)
       setMessage(data?.choices[0].message)
     } catch (error) {
       console.error(error)
@@ -58,7 +58,7 @@ function App() {
 
   useEffect(() => {
     // console.log(currentTitle, value, message)
-    console.log(currentTitle)
+    // console.log(currentTitle)
     if (!currentTitle && value && message) {
       setCurrentTitle(value)
     }

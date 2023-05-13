@@ -6,7 +6,7 @@
   "scripts": {
     "start:front": "vite",
     "start:back": "nodemon server.js",
-    "build": "vite build",
+    "build": "vite build && node server.js",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -41,7 +41,7 @@ app.post('/answers', async (req, res) => {
 
         const data = await response.json()
         res.send(data)
-        res.send('success')
+        // res.send('success')
     } catch (error) {
         console.error(error);
     }
