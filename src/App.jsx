@@ -1,14 +1,21 @@
 // import e from 'cors';
 import { useEffect, useState } from 'react';
 import { AiOutlineEnter } from 'react-icons/ai';
+// import dotenv from "dotenv"
+
+// dotenv.config()
 
 // AiOutlineEnter
+
 
 function App() {
   const [message, setMessage] = useState(null)
   const [value, setValue] = useState(null)
   const [prevChats, setPrevChats] = useState([])
   const [currentTitle, setCurrentTitle] = useState(null)
+
+  const backendURL = import.meta.env.VITE_BACKEND_URL
+  // console.log(backendURL)
 
   const createNewChat = () => {
     setMessage(null)
@@ -37,7 +44,7 @@ function App() {
     }
     try {
       // e.preventDefault()
-      const response = await fetch('http://localhost:8000/answers', options)
+      const response = await fetch(`${backendURL}/answers`, options)
       const data = await response.json()
 
       console.log(data)
